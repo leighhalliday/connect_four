@@ -25,6 +25,10 @@ defmodule ConnectFour.Board do
     for row <- @last_row..1, do: print_columns(row)
   end
 
+  def place_token(_player, _col) do
+    :move_accepted
+  end
+
   defp print_columns(row) do
     for col <- 1..@last_column, do: print_space(row, col)
     IO.write "\n"
